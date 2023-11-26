@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Registrar Producto</h2>
+    <form th:action="@{/GuardarProducto}" th:object="${regproducto}" method="post">
+
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" th:field="*{nombreCL3}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="precioVenta">Precio de Venta:</label>
+            <input type="text" class="form-control" id="precioVenta" th:field="*{precioVentaCL3}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="stock">Stock:</label>
+            <input type="number" class="form-control" id="stock" th:field="*{stock}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="precioCompra">Precio de Compra:</label>
+            <input type="text" class="form-control" id="precioCompra" th:field="*{precioCompraCL3}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="estado">Estado:</label>
+            <input type="text" class="form-control" id="estado" th:field="*{estadoCL3}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="descrip">Descripción:</label>
+            <textarea class="form-control" id="descrip" th:field="*{descripCL3}" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+</body>
+</html>

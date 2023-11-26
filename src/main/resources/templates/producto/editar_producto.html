@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <!-- Agrega los enlaces a los archivos de estilo de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Editar Producto</h2>
+    <form th:action="@{/ActualizarProducto}" th:object="${editproducto}" method="post">
+	    <div class="mb-3">
+	        <label for="idProducto" class="form-label">ID del Producto</label>
+	        <input type="text" class="form-control" id="idProducto" name="idProducto" th:field="*{idProductoCL3}" readonly>
+	    </div>
+	
+	    <!-- Otros campos del formulario -->
+	    
+	    <div class="mb-3">
+	        <label for="nombre" class="form-label">Nombre</label>
+	        <input type="text" class="form-control" id="nombre" name="nombre" th:field="*{nombreCL3}">
+	    </div>
+	
+	    <div class="mb-3">
+	        <label for="precioVenta" class="form-label">Precio de Venta</label>
+	        <input type="text" class="form-control" id="precioVenta" name="precioVenta" th:field="*{precioVentaCL3}">
+	    </div>
+	
+	    <div class="mb-3">
+	        <label for="stock" class="form-label">Stock</label>
+	        <input type="text" class="form-control" id="stock" name="stock" th:field="*{stock}">
+	    </div>
+	
+	    <div class="mb-3">
+	        <label for="precioCompra" class="form-label">Precio de Compra</label>
+	        <input type="text" class="form-control" id="precioCompra" name="precioCompra" th:field="*{precioCompraCL3}">
+	    </div>
+	
+	    <div class="mb-3">
+	        <label for="estado" class="form-label">Estado</label>
+	        <input type="text" class="form-control" id="estado" name="estado" th:field="*{estadoCL3}">
+	    </div>
+	
+	    <div class="mb-3">
+	        <label for="descripcion" class="form-label">Descripción</label>
+	        <textarea class="form-control" id="descripcion" name="descripcion" th:field="*{descripCL3}"></textarea>
+	    </div>
+	
+	    <!-- Botón de envío -->
+	    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+	</form>
+</div>
+
+</body>
+</html>
